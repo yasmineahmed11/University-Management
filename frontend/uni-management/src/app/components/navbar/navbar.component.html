@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-center">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-white px-4 z-3 position-fixed w-75  my-1">
+  <a class="navbar-brand fw-bold text-black" routerLink="/">UniManager</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item px-3" >
+        <a class="nav-link text-black fw-medium" routerLink="/" routerLinkActive="active" >Home</a>
+      </li>
+      <li class="nav-item px-3">
+        <a class="nav-link text-black fw-medium" routerLink="/faculties" routerLinkActive="active">Faculties</a>
+      </li>
+      <li class="nav-item px-3">
+        <a class="nav-link text-black fw-medium" routerLink="/courses" routerLinkActive="active">Courses</a>
+      </li>
+
+      <li class="nav-item px-3" *ngIf="authService.isAuthenticated()">
+        <a class="nav-link text-black fw-medium" routerLink="/students" routerLinkActive="active">Students</a>
+      </li>
+
+
+<!-- security -->
+
+<li class="nav-item px-3" *ngIf="!isLoggedIn()">
+  <a class="btn btn-outline-primary" routerLink="/login">Login</a>
+</li>
+<li class="nav-item px-3" *ngIf="!isLoggedIn()">
+  <a class="btn btn-outline-success" routerLink="/register">Register</a>
+</li>
+
+<li class="nav-item px-3" *ngIf="isLoggedIn()">
+  <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+</li>
+
+    </ul>
+  </div>
+</nav>
+
+</div>

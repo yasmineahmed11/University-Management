@@ -1,0 +1,9 @@
+.navbar-nav .nav-link.active {
+  font-weight: bolder;
+  color: #27AF6E !important;
+}
+
+nav{
+  top: 1rem;
+
+}
